@@ -1,0 +1,10 @@
+{
+  "protocol_version": "1.0",
+  "message_type": "HEARTBEAT_ACK",
+  "session_id": "sess_demo0001",
+  "sensor_id": "sensor_01",
+  "sequence_number": 7,
+  "client_time_ms": 1791735602123,
+  "host_time_ms": 1791735602129,
+  "sensor_state": "online"
+}

@@ -1,0 +1,16 @@
+{
+  "protocol_version": "1.0",
+  "message_type": "ERROR",
+  "session_id": "sess_demo0001",
+  "error_code": "SCHEMA_VALIDATION_FAILED",
+  "message": "LANDMARK_OBSERVATION failed validation",
+  "related_message_type": "LANDMARK_OBSERVATION",
+  "details": [
+    {
+      "field": "landmarks.0.confidence",
+      "problem": "Input should be less than or equal to 1"
+    }
+  ],
+  "fatal": false,
+  "host_time_ms": 1791735601133
+}

@@ -1,0 +1,15 @@
+{
+  "protocol_version": "1.0",
+  "message_type": "HEARTBEAT",
+  "session_id": "sess_demo0001",
+  "sensor_id": "sensor_01",
+  "sequence_number": 7,
+  "client_time_ms": 1791735602123,
+  "health": {
+    "camera": "active",
+    "inference": "detecting",
+    "observed_hz": 14.8,
+    "frames_skipped": 120,
+    "send_drops": 0
+  }
+}

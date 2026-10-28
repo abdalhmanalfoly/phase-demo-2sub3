@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SAGA 3D – Operator</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main style="max-width: 1100px">
+    <h1>SAGA 3D operator (debug)</h1>
+    <section class="controls">
+      <div class="buttons">
+        <button id="create-btn">Create session</button>
+        <input id="session-input" placeholder="session id" autocomplete="off" spellcheck="false">
+        <button id="stop-btn" disabled>Stop session</button>
+      </div>
+      <p id="join">Join link: —</p>
+    </section>
+    <p id="host-state">Host: …</p>
+    <dl class="stats">
+      <dt>Session</dt><dd id="s-id">—</dd><dt>State</dt><dd id="s-state">—</dd>
+      <dt>Sensors connected</dt><dd id="s-conn">—</dd><dt>Rejected messages</dt><dd id="s-rej">—</dd>
+    </dl>
+    <div style="overflow-x:auto"><table>
+      <thead><tr><th>Sensor</th><th>State</th><th>Permission</th><th>Camera</th><th>Model</th><th>Rate (Hz)</th>
+        <th>Last obs age (ms)</th><th>Capture age (ms)</th><th>Hand</th><th>Accepted</th><th>Rejected</th><th>Gaps</th>
+        <th>Reconnects</th><th>Last error</th></tr></thead>
+      <tbody id="sensors"></tbody>
+    </table></div>
+    <h2>Spatial fusion (wrist)</h2>
+    <p id="fusion-state" class="state" data-state="stopped">no data</p>
+    <dl class="stats">
+      <dt>XYZ (m, world frame)</dt><dd id="f-xyz">—</dd><dt>Reason</dt><dd id="f-reason">—</dd>
+      <dt>Skew / reproj. error / ray angle</dt><dd id="f-metrics">—</dd><dt>Quality</dt><dd id="f-quality">—</dd>
+      <dt>Held estimate</dt><dd id="f-held">—</dd><dt>Warnings</dt><dd id="f-warn">—</dd>
+    </dl>
+    <h2>Calibration</h2>
+    <p id="cal-summary">—</p>
+    <div class="buttons">
+      <input id="bind-sensor" placeholder="sensor id (e.g. sensor_01)"><input id="bind-camera" placeholder="camera id (e.g. phone_left)">
+      <button id="bind-btn">Bind</button><button id="invalidate-btn" title="Camera moved or replaced: mark its calibration invalid">Invalidate camera</button>
+      <button id="reload-btn">Reload files</button>
+    </div>
+    <div style="overflow-x:auto"><table><thead><tr><th>Sensor</th><th>Camera</th><th>Usable</th><th>Problem</th><th>Calibration</th></tr></thead><tbody id="cal-rows"></tbody></table></div>
+    <h2>Recent errors</h2><ul id="errors"></ul>
+  </main>
+  <script type="module" src="src/operator.js"></script>
+</body>
+</html>

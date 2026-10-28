@@ -1,0 +1,49 @@
+# Phase 2: calibration store, observation synchronization, triangulation, smoothing, tracking loss.
+# Every threshold here is a STARTING POINT to be measured and tuned on the real rig.
+spatial:
+  enabled: true
+  targets: [wrist]                 # landmark ids fused independently (any id the sensors send)
+  calibration_dir: calibration     # <dir>/<rig_id>/<camera_id>.json  (+ history/)
+  rig_id: default_rig
+  allow_synthetic_calibration: false   # artifacts flagged synthetic are refused unless true (tests only)
+  subtract_half_pixel: true        # landmark px (MediaPipe, edge-origin) -> OpenCV px (centre-origin): u_cv = x_px - 0.5
+  recent_results: 50               # per-session ring buffer served by the API
+  tick_ms: 50                      # background fusion tick (tracking-loss timing resolution)
+  save_fusion_results: true        # logs/sessions/<id>/fusion.jsonl (numbers only)
+sync:
+  max_skew_ms: 50                  # max capture-time gap inside one fused set (corrected to a common clock)
+  max_observation_age_ms: 250      # older than this (host now - corrected capture) -> stale, not used
+  buffer_per_sensor: 16            # bounded history; oldest dropped first
+  out_of_order_tolerance_ms: 0     # corrected capture time may not go backwards beyond this per sensor
+  clock_suspect_ms: 100            # observation "received before captured" by more than this -> clock problem
+  degrade_grace_ms: 120            # a non-valid outcome must persist this long before it is published
+triangulation:
+  min_views: 2
+  max_reprojection_error_px: 6.0   # aggregate RMS over contributing cameras
+  max_view_reprojection_px: 12.0   # any single view above this is an outlier candidate
+  min_ray_angle_deg: 2.0           # smaller max pairwise angle between viewing rays -> degenerate geometry
+  min_depth_m: 0.05
+  max_depth_m: 20.0
+  min_homogeneous_w: 1.0e-9        # |w| / ||X_h|| below this means "point at infinity"
+  refine_iterations: 5             # Gauss-Newton refinement of the DLT result (0 disables)
+  require_hand_agreement: true     # contributing sensors must not report conflicting left/right labels
+quality:
+  good_ray_angle_deg: 20.0         # geometry term saturates at this angle
+smoothing:
+  enabled: true
+  # One Euro filter at 15 Hz. MEASURED trade-off (docs/spatial.md): min_cutoff 3 / beta 1 -> ~35-50 ms lag, ~38 % less
+  # static jitter; min_cutoff 1.5 would halve the jitter again but adds ~65-100 ms lag (too much for a 150 ms budget).
+  min_cutoff_hz: 3.0               # lower = smoother but laggier at rest
+  beta: 1.0                        # speed coefficient; higher = less lag when moving fast
+  d_cutoff_hz: 1.0
+tracking:
+  hold_ms: 500                     # keep the last valid estimate (reported separately as "held") this long (> max_observation_age_ms)
+  max_speed_mps: 8.0               # faster implied motion between consecutive valid estimates = track discontinuity -> filter reset
+calibration_quality:
+  min_samples: 10
+  max_intrinsic_rms_px: 1.0
+  max_extrinsic_rms_px: 2.0
+  max_sample_error_px: 2.0         # per-image RMS above this -> sample rejected, then recalibrate
+  min_coverage_fraction: 0.35      # union of detected board extents / image area
+  min_tilt_spread_deg: 10.0
+  fix_k3: true                     # estimate k1,k2,p1,p2 only (k3 over-fits with few views)

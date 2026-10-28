@@ -1,0 +1,20 @@
+server:
+  host: 0.0.0.0
+  port: 8765
+  allowed_origins: []        # empty = no Origin restriction (trusted LAN only)
+  public_ws_url: null        # override only if the browser must reach the host via another URL
+session:
+  max_sessions: 8
+  max_sensors: 4             # concurrently connected sensors per session
+  hello_timeout_s: 5.0       # a socket must send HELLO within this time
+  sweep_interval_s: 1.0      # background health evaluation period
+  retain_stopped_sessions: 16
+logging:
+  log_dir: logs
+  save_landmark_events: true # per-session JSONL of accepted landmark observations (numbers only)
+  save_raw_video: false      # Phase 1 has no video path; true is refused at startup
+  recent_events_buffer: 200
+limits:
+  max_message_bytes: 16384
+  max_observation_hz_host: 60  # per sensor; faster senders get RATE_LIMITED
+  error_throttle_ms: 1000      # at most one ERROR reply per code per socket per period (all are still logged)

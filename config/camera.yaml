@@ -1,0 +1,16 @@
+camera:
+  facing_mode: user          # user | environment (selectable in the UI)
+  ideal_width: 640
+  ideal_height: 480
+  ideal_frame_rate: 30
+  # MediaPipe assumes a mirrored (selfie) image when labelling Left/Right. Our sensors send the
+  # UN-mirrored frame, so labels are swapped by default. Verify in the manual smoke test.
+  flip_handedness: true
+model:
+  name: hand_landmarker
+  variant: float16
+  version: "1"
+  mediapipe_tasks_vision_version: "1.1.1"
+  bundle_path: /client/vendor/mediapipe/vision_bundle.mjs
+  wasm_path: /client/vendor/mediapipe/wasm
+  model_path: /client/vendor/models/hand_landmarker.task

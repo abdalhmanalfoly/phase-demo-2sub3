@@ -1,0 +1,13 @@
+{
+  "protocol_version": "1.0",
+  "message_type": "SENSOR_STATUS",
+  "session_id": "sess_demo0001",
+  "sensor_id": "sensor_01",
+  "client_time_ms": 1791735600623,
+  "permission": "granted",
+  "camera": "active",
+  "inference": "ready",
+  "connection": "connected",
+  "reconnect_count": 0,
+  "detail": null
+}

@@ -1,0 +1,7 @@
+{
+  "protocol_version": "1.0",
+  "message_type": "SESSION_STOP",
+  "session_id": "sess_demo0001",
+  "reason": "operator_request",
+  "host_time_ms": 1791735609623
+}

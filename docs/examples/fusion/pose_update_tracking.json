@@ -1,0 +1,84 @@
+{
+  "protocol_version": "1.0",
+  "message_type": "POSE_UPDATE",
+  "session_id": "sess_test0001",
+  "target_landmark": "wrist",
+  "fusion_sequence": 0,
+  "status": "TRACKING_MULTI_VIEW",
+  "valid": true,
+  "reason": null,
+  "message": "valid calibrated multi-view triangulation",
+  "timestamp_ms": 1791735600000.0,
+  "published_at_ms": 1791735600000,
+  "unit": "m",
+  "world_frame_id": "board_frame",
+  "world_xyz_m": [
+    0.25000000000000006,
+    0.1,
+    0.5999999999999999
+  ],
+  "raw_world_xyz_m": [
+    0.25000000000000006,
+    0.1,
+    0.5999999999999999
+  ],
+  "held_world_xyz_m": null,
+  "held_age_ms": null,
+  "single_view_ray": null,
+  "source_sensor_ids": [
+    "phone_left",
+    "phone_right"
+  ],
+  "sources": [
+    {
+      "sensor_id": "phone_left",
+      "camera_id": "phone_left",
+      "calibration_id": "phone_left-synth",
+      "sequence_number": 0,
+      "frame_id": 0,
+      "captured_at_ms": 1791735600000,
+      "received_at_ms": 1791735600000,
+      "effective_time_ms": 1791735600000.0,
+      "age_ms": 0.0,
+      "transport_delay_ms": 0.0,
+      "reprojection_error_px": 2.842170943040401e-14,
+      "used": true,
+      "note": null
+    },
+    {
+      "sensor_id": "phone_right",
+      "camera_id": "phone_right",
+      "calibration_id": "phone_right-synth",
+      "sequence_number": 0,
+      "frame_id": 0,
+      "captured_at_ms": 1791735600000,
+      "received_at_ms": 1791735600000,
+      "effective_time_ms": 1791735600000.0,
+      "age_ms": 0.0,
+      "transport_delay_ms": 0.0,
+      "reprojection_error_px": 0.0,
+      "used": true,
+      "note": null
+    }
+  ],
+  "skew_ms": 0.0,
+  "aggregate_reprojection_error_px": 2.0097183471152322e-14,
+  "ray_angle_deg": 41.55860598513141,
+  "quality": {
+    "score": 0.9999999999999967,
+    "reprojection": 0.9999999999999967,
+    "sync": 1.0,
+    "geometry": 1.0
+  },
+  "calibration": {
+    "rig_id": "default_rig",
+    "rig_calibration_id": "rig-1",
+    "world_frame_id": "board_frame",
+    "calibration_ids": {
+      "phone_left": "phone_left-synth",
+      "phone_right": "phone_right-synth"
+    }
+  },
+  "smoothing_applied": false,
+  "warnings": []
+}

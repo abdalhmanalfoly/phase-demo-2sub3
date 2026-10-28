@@ -1,0 +1,26 @@
+:root { color-scheme: light dark; --ok:#16a34a; --warn:#d97706; --bad:#dc2626; --mut:#6b7280; }
+* { box-sizing: border-box; }
+body { font: 15px/1.4 system-ui, sans-serif; margin: 0; padding: 12px; }
+main { max-width: 720px; margin: 0 auto; }
+h1 { font-size: 1.2rem; margin: 0 0 8px; }
+.controls { display: grid; gap: 8px; margin-bottom: 8px; }
+label { display: grid; gap: 4px; }
+input, select, button { font: inherit; padding: 8px; }
+.buttons { display: flex; gap: 8px; } .buttons button { flex: 1; }
+.state { font-weight: 600; padding: 6px 10px; border-radius: 6px; background: #e5e7eb33; border-left: 6px solid var(--mut); }
+.state[data-state="detecting"], .state[data-state="connected"] { border-color: var(--ok); }
+.state[data-state="model_loading"], .state[data-state="requesting_camera"], .state[data-state="disconnected"] { border-color: var(--warn); }
+.state[data-state="permission_denied"], .state[data-state="camera_unavailable"] { border-color: var(--bad); }
+.stage { position: relative; background: #000; aspect-ratio: 4/3; border-radius: 8px; overflow: hidden; }
+.stage video, .stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.mirror { transform: scaleX(-1); }
+.stats { display: grid; grid-template-columns: max-content 1fr; gap: 2px 12px; }
+.stats dt { color: var(--mut); } .stats dd { margin: 0; word-break: break-word; }
+.warn { background: #fef3c7; color: #78350f; padding: 8px; border-radius: 6px; }
+.note { color: var(--mut); font-size: .85rem; }
+#log { font: 12px/1.4 ui-monospace, monospace; padding-left: 16px; max-height: 12em; overflow: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th, td { border: 1px solid #9ca3af55; padding: 4px 6px; text-align: left; }
+.pill { padding: 1px 8px; border-radius: 10px; color: #fff; }
+.pill.online { background: var(--ok); } .pill.degraded { background: var(--warn); }
+.pill.offline, .pill.disconnected { background: var(--bad); }

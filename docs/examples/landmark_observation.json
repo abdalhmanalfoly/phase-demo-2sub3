@@ -1,0 +1,47 @@
+{
+  "protocol_version": "1.0",
+  "message_type": "LANDMARK_OBSERVATION",
+  "session_id": "sess_demo0001",
+  "sensor_id": "sensor_01",
+  "sequence_number": 1842,
+  "frame_id": 5210,
+  "captured_at_ms": 1791735601123,
+  "image_width": 640,
+  "image_height": 480,
+  "status": "tracked",
+  "hand": "right",
+  "landmarks": [
+    {
+      "id": "wrist",
+      "x_px": 412.4,
+      "y_px": 263.8,
+      "confidence": null,
+      "x_norm": 0.6444,
+      "y_norm": 0.5496,
+      "z_model": -0.02
+    },
+    {
+      "id": "thumb_tip",
+      "x_px": 425.1,
+      "y_px": 252.0,
+      "confidence": null,
+      "x_norm": 0.6642,
+      "y_norm": 0.525,
+      "z_model": -0.02
+    },
+    {
+      "id": "index_tip",
+      "x_px": 431.9,
+      "y_px": 248.7,
+      "confidence": null,
+      "x_norm": 0.6748,
+      "y_norm": 0.5181,
+      "z_model": -0.02
+    }
+  ],
+  "quality": {
+    "inference_ms": 26.4,
+    "handedness_score": 0.97,
+    "flags": []
+  }
+}

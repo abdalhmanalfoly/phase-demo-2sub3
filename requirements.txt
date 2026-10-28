@@ -1,0 +1,9 @@
+# Runtime dependencies for the SAGA 3D host (Phase 1). Verified together on Python 3.12.3.
+# OpenCV / NumPy are intentionally NOT listed yet: they arrive with Phase 2 (calibration + fusion).
+fastapi==0.143.1
+uvicorn[standard]==0.54.0
+pydantic==2.14.1
+PyYAML==6.0.3
+# Phase 2 (calibration + spatial fusion). OpenCV 4.14.0 verified; 5.0.0 also passed an API smoke test but is a new major release - pinned to the 4.x line.
+numpy==2.5.4
+opencv-python-headless==4.14.0.94

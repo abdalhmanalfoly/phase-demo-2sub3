@@ -1,0 +1,26 @@
+# environments / caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+node_modules/
+# secrets, certificates, local env
+.env
+*.pem
+*.key
+*.crt
+certs/
+# generated logs (keep the folder)
+logs/*
+!logs/.gitkeep
+# third-party browser assets fetched by scripts/fetch_assets.sh (licensing + size)
+sensor-client/vendor/
+# private camera data / future calibration captures
+captures/
+*.mp4
+*.webm
+
+# real calibration data describes your physical setup; keep the synthetic example + README
+calibration/*
+!calibration/README.md
+!calibration/example_synthetic/

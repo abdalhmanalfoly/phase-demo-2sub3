@@ -1,0 +1,23 @@
+heartbeat:
+  interval_ms: 2000          # sent to sensors in REGISTERED
+  degraded_after_ms: 4500    # no heartbeat for this long -> degraded
+  offline_after_ms: 8000     # no heartbeat for this long -> offline
+observation:
+  max_ingress_age_ms: 2000   # reject observations older than this (after clock-offset correction)
+  max_future_skew_ms: 1000   # reject observations "from the future" by more than this
+  rate_window_ms: 5000       # window for the reported update rate
+vision:
+  target_update_hz: 15
+  max_update_hz: 30
+  min_detection_confidence: 0.5
+  min_presence_confidence: 0.5
+  min_tracking_confidence: 0.5
+  required_landmarks: [wrist, thumb_tip, index_tip]
+  optional_landmarks: [index_mcp, pinky_mcp]
+client:
+  reconnect:
+    base_ms: 500
+    max_ms: 10000
+    factor: 2
+    jitter: 0.2              # +/- fraction of the delay
+  max_buffered_bytes: 65536  # drop observations while the socket send buffer exceeds this

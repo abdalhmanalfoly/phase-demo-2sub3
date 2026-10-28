@@ -1,0 +1,21 @@
+{
+  "protocol_version": "1.0",
+  "message_type": "LANDMARK_OBSERVATION",
+  "session_id": "sess_demo0001",
+  "sensor_id": "sensor_01",
+  "sequence_number": 1843,
+  "frame_id": 5214,
+  "captured_at_ms": 1791735601189,
+  "image_width": 640,
+  "image_height": 480,
+  "status": "no_hand",
+  "hand": "unknown",
+  "landmarks": [],
+  "quality": {
+    "inference_ms": 18.0,
+    "handedness_score": null,
+    "flags": [
+      "overloaded"
+    ]
+  }
+}

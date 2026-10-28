@@ -1,0 +1,27 @@
+{
+  "protocol_version": "1.0",
+  "message_type": "HELLO",
+  "session_id": "sess_demo0001",
+  "client_id": "c0123456789abcdef",
+  "requested_sensor_id": null,
+  "client_version": "saga-sensor-client/0.1.0",
+  "model_version": "hand_landmarker/float16/1; tasks-vision 1.1.1",
+  "client_time_ms": 1791735600123,
+  "capabilities": {
+    "landmarks": [
+      "wrist",
+      "thumb_tip",
+      "index_tip",
+      "index_mcp",
+      "pinky_mcp"
+    ],
+    "max_update_hz": 30,
+    "inference": "on_device",
+    "camera": {
+      "facing": "environment",
+      "width": 640,
+      "height": 480
+    },
+    "user_agent": "Mozilla/5.0 (example)"
+  }
+}

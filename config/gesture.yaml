@@ -1,0 +1,27 @@
+# Phase 3: Gesture Agent. Thresholds are STARTING POINTS; tune on hardware (docs/gesture.md).
+pinch_enter_ratio: 0.25        # LOWER threshold: enter pinched (thumb-index distance / palm length, same view)
+pinch_exit_ratio: 0.45         # HIGHER threshold: exit pinched. enter < exit is enforced.
+confirm_ms: 120.0
+release_confirm_ms: 50.0
+smoothing_window: 3
+min_pinch_samples: 3
+max_evidence_gap_ms: 150.0
+min_palm_scale_px: 20.0
+min_landmark_confidence: 0.3
+stale_landmark_ms: 250.0
+reach_enter_m: 0.12
+reach_exit_m: 0.18
+min_confidence: 0.5
+exit_confidence: 0.35
+confidence_history: 3
+max_pose_age_ms: 250.0
+tracking_lost_report_ms: 100.0
+hover_loss_timeout_ms: 250.0
+grab_loss_timeout_ms: 400.0    # DEFAULT SAFE BEHAVIOUR: freeze the object (no MOVE_TARGET) for at most this long, then cancel and release in place
+max_resume_jump_m: 0.25
+require_adapter_ack: false
+ack_timeout_ms: 500.0
+release_ack_required: false
+release_ack_timeout_ms: 500.0
+release_settle_ms: 100.0
+move_max_hz: 30.0

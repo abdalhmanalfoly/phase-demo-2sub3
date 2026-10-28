@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SAGA 3D – Sensor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>SAGA 3D sensor</h1>
+    <p id="secure-warning" class="warn" hidden>
+      This page is not in a secure context, so the browser will block the camera. Open it over
+      <b>https://</b> (or <b>localhost</b>). See docs/setup.md.
+    </p>
+    <section class="controls">
+      <label>Session code <input id="session-input" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="sess_xxxxxxxx"></label>
+      <label>Camera
+        <select id="facing-select"><option value="user">Front (user)</option><option value="environment">Rear (environment)</option></select>
+      </label>
+      <div class="buttons"><button id="start-btn">Start</button><button id="stop-btn" disabled>Stop</button></div>
+      <button id="snap-btn" disabled title="Saves the current camera frame to THIS device only (for calibration). Nothing is uploaded.">Save calibration frame (local file)</button>
+    </section>
+    <p id="ui-state" class="state" data-state="stopped">Stopped</p>
+    <div class="stage">
+      <video id="video" playsinline muted></video>
+      <canvas id="overlay"></canvas>
+    </div>
+    <dl class="stats">
+      <dt>Permission</dt><dd id="b-permission">unknown</dd>
+      <dt>Camera</dt><dd id="b-camera">idle</dd>
+      <dt>Model</dt><dd id="b-model">idle</dd>
+      <dt>Connection</dt><dd id="b-connection">idle</dd>
+      <dt>Sensor ID</dt><dd id="sensor-id">—</dd>
+      <dt>Send rate</dt><dd id="rate-sent">—</dd>
+      <dt>Dropped</dt><dd id="drops">0</dd>
+      <dt>Host RTT</dt><dd id="rtt">—</dd>
+      <dt>Last error</dt><dd id="last-error">—</dd>
+    </dl>
+    <p class="note">Landmarks are computed on this device. No video or images are sent or stored.</p>
+    <ul id="log"></ul>
+  </main>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

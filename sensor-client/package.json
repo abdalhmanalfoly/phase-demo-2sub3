@@ -1,0 +1,7 @@
+{
+  "name": "saga3d-sensor-client",
+  "private": true,
+  "type": "module",
+  "description": "Browser sensor client for SAGA 3D. No build step; ES modules served by the Python host.",
+  "scripts": { "test": "node --test tests/*.test.mjs" }
+}

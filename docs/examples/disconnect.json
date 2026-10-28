@@ -1,0 +1,8 @@
+{
+  "protocol_version": "1.0",
+  "message_type": "DISCONNECT",
+  "session_id": "sess_demo0001",
+  "sensor_id": "sensor_01",
+  "client_time_ms": 1791735609123,
+  "reason": "user_stop"
+}

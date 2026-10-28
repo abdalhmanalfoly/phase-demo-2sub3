@@ -1,0 +1,18 @@
+{
+  "protocol_version": "1.0",
+  "message_type": "REGISTERED",
+  "session_id": "sess_demo0001",
+  "sensor_id": "sensor_01",
+  "resumed": false,
+  "heartbeat_interval_ms": 2000,
+  "target_update_hz": 15,
+  "max_update_hz": 30,
+  "required_landmarks": [
+    "wrist",
+    "thumb_tip",
+    "index_tip"
+  ],
+  "session_state": "active",
+  "host_time_ms": 1791735600131,
+  "host_version": "0.1.0"
+}

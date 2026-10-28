@@ -1,0 +1,140 @@
+{
+  "calibration_version": "1.0",
+  "created_at": "2026-10-19T21:26:18+00:00",
+  "synthetic": true,
+  "notes": "SYNTHETIC example - generated from rendered images, not a real camera",
+  "image_width": 640,
+  "image_height": 480,
+  "target": {
+    "type": "checkerboard",
+    "inner_corners_cols": 9,
+    "inner_corners_rows": 6,
+    "square_size": 0.04,
+    "unit": "m"
+  },
+  "camera_matrix": [
+    [
+      601.3166951283106,
+      0.0,
+      323.1122041644508
+    ],
+    [
+      0.0,
+      601.588726077345,
+      238.0228478477082
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "distortion": [
+    0.00036980896286408757,
+    -0.0013986133079146596,
+    -6.342219376634997e-05,
+    -5.129662938450797e-05,
+    0.0
+  ],
+  "quality": {
+    "intrinsic_rms_px": 0.05329673956846193,
+    "extrinsic_rms_px": 0.07394831576222509,
+    "samples_used": 3,
+    "samples_rejected": [],
+    "per_sample_rms_px": {},
+    "coverage_fraction": 0.2839583333333333,
+    "tilt_spread_deg": 24.152665091046472,
+    "rig_check": {
+      "pairs": {
+        "phone_left+phone_right": {
+          "mean_mm": 0.17559910622776764,
+          "max_mm": 0.800188437969767,
+          "n_corners": 54,
+          "ray_angle_deg": 60.33369536434192
+        }
+      },
+      "note": "internal consistency of detector+intrinsics+extrinsics+triangulation on the reference board; NOT a physical accuracy claim"
+    }
+  },
+  "validity": {
+    "status": "valid",
+    "warnings": [],
+    "reason": null,
+    "invalidated_at": null
+  },
+  "kind": "camera_calibration",
+  "calibration_id": "phone_right-20261019T212618",
+  "camera_id": "phone_right",
+  "rig_id": "default_rig",
+  "rig_calibration_id": "rig-20261019T212618",
+  "world_frame_id": "board_frame",
+  "unit": "m",
+  "intrinsics_id": "phone_right-20261019T212618",
+  "extrinsics": {
+    "convention": "world_to_camera",
+    "rotation": [
+      [
+        0.8616108141139143,
+        0.0001775476942548898,
+        0.5075694765042262
+      ],
+      [
+        0.05967379946843854,
+        0.9930293706635018,
+        -0.10164500310713799
+      ],
+      [
+        -0.504049444656929,
+        0.11786703303496603,
+        0.8555942495509047
+      ]
+    ],
+    "translation": [
+      -0.17404119710804294,
+      -0.06320884326924547,
+      1.3845464852574854
+    ],
+    "camera_to_world_rotation": [
+      [
+        0.8616108141139143,
+        0.05967379946843854,
+        -0.504049444656929
+      ],
+      [
+        0.0001775476942548898,
+        0.9930293706635018,
+        0.11786703303496603
+      ],
+      [
+        0.5075694765042262,
+        -0.10164500310713799,
+        0.8555942495509047
+      ]
+    ],
+    "camera_center_world": [
+      0.8516075763632405,
+      -0.10039324785101147,
+      -1.1026968747864236
+    ]
+  },
+  "projection_matrix": [
+    [
+      355.2364401588244,
+      38.19103923498901,
+      581.6629440023501,
+      342.7099891585061
+    ],
+    [
+      -84.07619927088514,
+      625.4503209251861,
+      142.50249194887814,
+      291.52796989935365
+    ],
+    [
+      -0.504049444656929,
+      0.11786703303496603,
+      0.8555942495509047,
+      1.3845464852574854
+    ]
+  ]
+}
